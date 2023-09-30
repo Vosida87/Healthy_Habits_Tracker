@@ -39,8 +39,7 @@
   - redis-cli
   - ping
 
-    
-2. Для запуска проекта: python manage.py runserver 
+
+2. Для миграций: python manage.py makemigrations | python manage.py migrate
+3. Для запуска проекта: python manage.py runserver 
 4. Для запуска celery: celery -A config worker -l INFO -P eventlet
-
-
