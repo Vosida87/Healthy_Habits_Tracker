@@ -197,7 +197,9 @@ CELERY_TASK_TIME_LIMIT = 30 * 60
 # Настройки для периодических задач
 CELERY_BEAT_SCHEDULE = {
     'last_login': {
-        'task': 'educational_service.tasks.<название_задачи>',  # Путь к задаче
-        'schedule': timedelta(days=1),  # Расписание выполнения задачи
+        'task': 'habits.tasks.check_if_send_notification',  # Путь к задаче
+        'schedule': timedelta(seconds=30),  # Расписание выполнения задачи
     },
 }
+
+TELEGRAM_BOT_API_KEY = os.getenv('TELEGRAM_BOT_API_KEY')

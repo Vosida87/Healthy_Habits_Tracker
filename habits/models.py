@@ -29,6 +29,11 @@ class Habit(models.Model):
     time_to_execute = models.PositiveSmallIntegerField(verbose_name='время на выполнение', **NULLABLE)
     is_published = models.BooleanField(default=False, verbose_name='признак публичности')
 
+    def set_current_time(self, current_datetime):
+        """Для обновления времени"""
+        self.time = current_datetime
+        self.save()
+
     class Meta:
         verbose_name = 'Привычка'
         verbose_name_plural = 'Привычки'
