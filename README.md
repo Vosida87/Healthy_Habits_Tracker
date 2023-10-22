@@ -6,7 +6,7 @@
 
 Аутентификация сделана через djoser
 
-# Настройки для запуска проекта (windows)
+## Настройки для запуска проекта (windows)
 
 1. Установите все зависимости командой pip install - r requirements.txt
 2. Создайте в проекте файл .env
@@ -24,11 +24,13 @@
         - DB_USER='ИМЯ ПОЛЬЗОВАТЕЛЯ'
      
         - DB_PASSWORD='<ПАРОЛЬ К БД>'
+
+        - HOST='ХОСТ'
      
    - CACHE_ENABLED='True'
    - LOCATION="redis://127.0.0.1:6379"
 
-# Запуск проекта
+## Запуск проекта
 
   1.В wsl (ubuntu) устанавливаем и запускаем redis:
 
@@ -43,3 +45,12 @@
 2. Для миграций: python manage.py makemigrations | python manage.py migrate
 3. Для запуска проекта: python manage.py runserver 
 4. Для запуска celery: celery -A config worker -l INFO -P eventlet
+
+## Запуск докера  
+  
+Убедитесь, что в переменных окружения сервиса db у вас определены значения переменных ${DB_USER}, ${DB_PASSWORD} и ${DB_NAME} в файле .env  
+  
+Команда запуска контейнеров: docker-compose up  
+  
+Остановить и удалить контейнеры: docker-compose down  
+  
