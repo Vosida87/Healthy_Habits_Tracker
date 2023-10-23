@@ -51,6 +51,8 @@
 Убедитесь, что в переменных окружения сервиса db у вас определены значения переменных ${DB_USER}, ${DB_PASSWORD} и ${DB_NAME} в файле .env  
   
 Команда запуска контейнеров: docker-compose up  
+
+Миграция: docker-compose exec web python manage.py migrate  
   
 Остановить и удалить контейнеры: docker-compose down  
   
